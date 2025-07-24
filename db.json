@@ -1,0 +1,30 @@
+{
+  "usuarios": [
+    {
+      "id": "f242",
+      "nome": "Gustavo Marques ",
+      "renda": "4000",
+      "orcamentoDiario": -367.16666666666663
+    }
+  ],
+  "transacoes": [
+    {
+      "id": "9ab2",
+      "nome": "Comi o Mikael",
+      "valor": 500,
+      "tipo": "despesa",
+      "categoria": "Lazer",
+      "data": "2025-07-22",
+      "userId": "f242"
+    },
+    {
+      "id": "38da",
+      "nome": "Comi o Gordao",
+      "valor": 0.5,
+      "tipo": "despesa",
+      "categoria": "Obrigação",
+      "data": "2025-07-21",
+      "userId": "f242"
+    }
+  ]
+}
