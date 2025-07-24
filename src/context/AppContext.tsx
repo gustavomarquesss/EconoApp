@@ -95,3 +95,24 @@ export const useAppContext = () => {
 
   return context;
 };
+
+export const useTotalGastosMes = () => {
+  const { transacoes } = useAppContext();
+
+  const hoje = new Date();
+  const mesAtual = hoje.getMonth();
+  const anoAtual = hoje.getFullYear();
+
+  const total = transacoes.reduce((acc, transacao) => {
+    const data = new Date(transacao.data);
+    const mesmaData =
+      data.getMonth() === mesAtual && data.getFullYear() === anoAtual;
+
+    if (transacao.tipo === "despesa" && mesmaData) {
+      return acc + transacao.valor;
+    }
+    return acc;
+  }, 0);
+
+  return total;
+};

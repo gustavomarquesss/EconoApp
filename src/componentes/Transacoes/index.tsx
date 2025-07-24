@@ -5,7 +5,7 @@ import { Cartao, CartaoCabecalho, CartaoCorpo } from "../Cartao";
 import Botao from "../Botao";
 import styled from "styled-components";
 import Modal, { ModalHandle } from "../Modal";
-import { Form } from "react-router";
+import { Form } from "react-router-dom";
 import Label from "../Label";
 import CampoTexto from "../CampoTexto";
 import Fieldset from "../Fieldset";

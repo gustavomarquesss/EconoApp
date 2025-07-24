@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
   font-family: "Work Sans", sans-serif;
   font-optical-sizing: auto;
 
+  /* Tamanhos de fonte */
   --fonte-xxxl: 2.438rem;
   --fonte-xxl: 1.938rem;
   --fonte-xl: 1.562rem;
@@ -13,14 +14,17 @@ const GlobalStyle = createGlobalStyle`
   --fonte-s: 0.812rem;
   --fonte-xs: 0.625rem;
 
-  --cor-neutra-dark: #212229;
-  --cor-neutra-dark-medium: #2a2c34;
-  --cor-neutra-medium: #33353f;
-  --cor-neutra-light: #f5f5f5;
-  --cor-primaria: #7693ff;
-  --cor-secundaria-receita: #d6ff62;
-  --cor-secundaria-despesa: #f87828;
+  /* Paleta de cores moderna dark */
+  --cor-neutra-dark: #000000;              /* fundo base */
+  --cor-neutra-dark-medium: #121212;       /* cards e containers */
+  --cor-neutra-medium: #1e1e1e;            /* bordas ou menus */
+  --cor-neutra-light: #e0e0e0;             /* textos claros */
+  
+  --cor-primaria: #4f46e5;                 /* roxo-azulado (destaque) */
+  --cor-secundaria-receita: #10b981;      /* verde para receitas */
+  --cor-secundaria-despesa: #f97316;       /* laranja para despesas */
 
+  /* Espaçamentos e bordas */
   --border-radius-s: 0.5rem;
   --border-radius-m: 1rem;
   --border-radius-l: 1.5rem;
@@ -43,8 +47,8 @@ body {
   display: flex;
   justify-content: center;
   background-color: var(--cor-neutra-dark);
+  color: var(--cor-neutra-light);
 }
-
 `;
 
 export default GlobalStyle;

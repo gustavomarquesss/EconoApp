@@ -4,6 +4,7 @@ import BarraPesquisa from "../../componentes/BarraPesquisa";
 import OrcamentoDiario from "../../componentes/OrcamentoDiario";
 import SaudacaoUsuario from "../../componentes/SaudacaoUsuario";
 import Transacoes from "../../componentes/Transacoes";
+import GastosMes from "../../componentes/GastosMes";
 import {
   Container,
   Movimentacoes,
@@ -19,6 +20,7 @@ function Home() {
       <SaudacaoUsuario />
       <Orcamento>
         <OrcamentoDiario />
+        <GastosMes />
       </Orcamento>
       <Movimentacoes>
         <BalancoFinanceiro />

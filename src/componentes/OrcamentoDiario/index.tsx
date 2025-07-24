@@ -1,4 +1,4 @@
-import { useAppContext } from "../../context/AppContext";
+import { useAppContext, useTotalGastosMes } from "../../context/AppContext";
 import { Cartao, CartaoCabecalho, CartaoCorpo, Descricao } from "../Cartao";
 
 const formatador = new Intl.NumberFormat("pt-BR", {
@@ -9,13 +9,18 @@ const formatador = new Intl.NumberFormat("pt-BR", {
 
 const OrcamentoDiario = () => {
   const { usuario } = useAppContext();
+  const totalGastos = useTotalGastosMes();
+
+  const saldoRestante = (usuario?.renda ?? 0) - totalGastos;
+
   return (
     <Cartao>
-      <CartaoCabecalho>Orçamento diário disponível</CartaoCabecalho>
+      <CartaoCabecalho>Saldo restante do mês</CartaoCabecalho>
       <CartaoCorpo>
-        <Descricao>{formatador.format(usuario?.orcamentoDiario ?? 0)}</Descricao>
+        <Descricao>{formatador.format(saldoRestante)}</Descricao>
       </CartaoCorpo>
     </Cartao>
   );
 };
+
 export default OrcamentoDiario;

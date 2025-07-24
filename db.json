@@ -4,26 +4,44 @@
       "id": "f242",
       "nome": "Gustavo Marques ",
       "renda": "4000",
-      "orcamentoDiario": -367.16666666666663
+      "orcamentoDiario": 141.33333333333334
     }
   ],
   "transacoes": [
     {
-      "id": "9ab2",
-      "nome": "Comi o Mikael",
-      "valor": 500,
+      "id": "896e",
+      "nome": "Pizza Oxxo e Guarana 2L",
+      "valor": 40,
       "tipo": "despesa",
-      "categoria": "Lazer",
-      "data": "2025-07-22",
+      "categoria": "Alimentação",
+      "data": "2025-07-24",
       "userId": "f242"
     },
     {
-      "id": "38da",
-      "nome": "Comi o Gordao",
-      "valor": 0.5,
+      "id": "1044",
+      "nome": "Teste",
+      "valor": 12,
       "tipo": "despesa",
-      "categoria": "Obrigação",
-      "data": "2025-07-21",
+      "categoria": "Teste",
+      "data": "2025-07-15",
+      "userId": "f242"
+    },
+    {
+      "id": "6814",
+      "nome": "Fernanda",
+      "valor": 50,
+      "tipo": "receita",
+      "categoria": "Uber",
+      "data": "2025-07-23",
+      "userId": "f242"
+    },
+    {
+      "id": "50e3",
+      "nome": "Teste",
+      "valor": 10,
+      "tipo": "receita",
+      "categoria": "Teste",
+      "data": "2025-07-22",
       "userId": "f242"
     }
   ]

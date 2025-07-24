@@ -8,7 +8,7 @@ import {
   SectionWrapper,
 } from "./style.js";
 import ilustracao from "../../assets/images/ilustracao-cadastro.png";
-import { Form, useNavigate } from "react-router";
+import { Form, useNavigate } from "react-router-dom";
 import Botao from "../../componentes/Botao/index.js";
 import CampoTexto from "../../componentes/CampoTexto/index.js";
 import Fieldset from "../../componentes/Fieldset/index.js";
