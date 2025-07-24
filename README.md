@@ -1,18 +1,13 @@
-![PoupApp](thumb.png)
+# 💰 EconoApp
 
-# 💰 PoupApp
+O EconoApp é uma plataforma de gerenciamento financeiro voltada para ajudar usuários a organizar suas finanças. Focado na simplicidade, o EconoApp permite que os usuários acompanhem seus gastos, definam metas financeiras e visualizem seu progresso através de gráficos dinâmicos. 
 
-O PoupApp é uma plataforma de gerenciamento financeiro voltada para ajudar usuários a organizar suas finanças. Focado na simplicidade, o PoupApp permite que os usuários acompanhem seus gastos, definam metas financeiras e visualizem seu progresso através de gráficos dinâmicos. 
+Com funcionalidades que incentivam o controle de despesas e a organização do orçamento diário, o EconoApp se torna o parceiro ideal para quem busca saúde financeira e realização de objetivos pessoais.
 
-Com funcionalidades que incentivam o controle de despesas e a organização do orçamento diário, o PoupApp se torna o parceiro ideal para quem busca saúde financeira e realização de objetivos pessoais.
-
-<p align="center">
-  <img src="./poupapp-home.png" alt="Página Inicial" width="30%" style="vertical-align: top; margin-right: 20px;" />
-</p>
 
 ## 🔨 Funcionalidades do projeto
 
-O PoupApp oferece as seguintes funcionalidades:
+O EconoApp oferece as seguintes funcionalidades:
 
 - Acompanhar o orçamento diário e manter o controle das suas despesas.
 - Realizar transações de maneira prática, adicionando despesas e receitas.
@@ -54,11 +49,3 @@ Para rodar o projeto em sua máquina local, siga estes passos:
     ```
 
 5. O projeto estará disponível em http://localhost:5173.
-
-## 📚 Mais informações do curso
-
-Gostou do projeto e quer conhecer mais?
-
-O design e protótipo deste projeto podem ser encontrados [aqui](https://www.figma.com/community/file/1468989433664551328). Este projeto é fictício e sem fins lucrativos. 
-
-Aproveite o desenvolvimento e aprimoramento do PoupApp!
