@@ -14,16 +14,6 @@ const GlobalStyle = createGlobalStyle`
   --fonte-s: 0.812rem;
   --fonte-xs: 0.625rem;
 
-  /* Paleta de cores moderna dark */
-  --cor-neutra-dark: #000000;              /* fundo base */
-  --cor-neutra-dark-medium: #121212;       /* cards e containers */
-  --cor-neutra-medium: #1e1e1e;            /* bordas ou menus */
-  --cor-neutra-light: #e0e0e0;             /* textos claros */
-  
-  --cor-primaria: #4f46e5;                 /* roxo-azulado (destaque) */
-  --cor-secundaria-receita: #10b981;      /* verde para receitas */
-  --cor-secundaria-despesa: #f97316;       /* laranja para despesas */
-
   /* Espaçamentos e bordas */
   --border-radius-s: 0.5rem;
   --border-radius-m: 1rem;
@@ -41,13 +31,49 @@ const GlobalStyle = createGlobalStyle`
   --gap-l: 1.5rem;
 }
 
+/* Tema Escuro (padrão) */
+[data-theme="dark"] {
+  --cor-neutra-dark: #000000;
+  --cor-neutra-dark-medium: #121212;
+  --cor-neutra-medium: #1e1e1e;
+  --cor-neutra-light: #e0e0e0;
+  
+  --cor-primaria: #2563eb; /* Azul moderno */
+  --cor-secundaria-receita: #10b981;
+  --cor-secundaria-despesa: #f97316;
+}
+
+/* Tema Claro */
+[data-theme="light"] {
+  --cor-neutra-dark: #ffffff;
+  --cor-neutra-dark-medium: #f8f9fa;
+  --cor-neutra-medium: #e9ecef;
+  --cor-neutra-light: #212529;
+  
+  --cor-primaria: #2563eb; /* Azul moderno */
+  --cor-secundaria-receita: #10b981;
+  --cor-secundaria-despesa: #f97316;
+}
+
 body {
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   background-color: var(--cor-neutra-dark);
   color: var(--cor-neutra-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  overflow-x: auto;
+}
+
+#root {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 `;
 

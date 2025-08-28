@@ -1,41 +1,28 @@
-import logo from "../../assets/images/logo.png";
 import styled from "styled-components";
+import ThemeToggle from "../ThemeToggle";
 
 export const Sidebar = styled.aside`
   position: fixed;
   top: 2rem;
   left: 2rem;
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
   z-index: 1000;
-`;
-
-export const Circle = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: var(--cor-neutra-dark-medium);
-  border-radius: 50%;
-  opacity: 0.6;
-  box-shadow: 0 8px 24px rgba(95, 95, 95, 0.5);
-  z-index: -1;
-`;
-
-export const Imagem = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  z-index: 1;
+  
+  @media (max-width: 1600px) {
+    left: 1rem;
+  }
 `;
 
 const BarraLateral = () => {
   return (
     <Sidebar>
-      <Circle />
-      <Imagem src={logo} alt="Logotipo do EconoApp" />
+      <ThemeToggle />
     </Sidebar>
   );
 };

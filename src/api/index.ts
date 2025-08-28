@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ITransacoes, IUsuario } from "../types";
+import { ITransacoes, IUsuario, IGastoProgramado } from "../types";
 
 const api = axios.create({
   baseURL: "http://localhost:5000",
@@ -57,10 +57,49 @@ export const criarTransacao = async (
   return { transacao: data, novoOrcamentoDiario };
 };
 
+export const atualizarTransacao = async (
+  id: string,
+  transacao: Partial<ITransacoes>
+): Promise<ITransacoes> => {
+  const { data } = await api.patch(`/transacoes/${id}`, transacao);
+  return data;
+};
+
+export const excluirTransacao = async (id: string): Promise<void> => {
+  await api.delete(`/transacoes/${id}`);
+};
+
 const calcularSaldo = (transacoes: ITransacoes[]): number => {
   return transacoes.reduce((total, transacao) => {
     return transacao.tipo === "receita"
       ? total + transacao.valor
       : total - transacao.valor;
   }, 0);
+};
+
+export const obterGastosProgramados = async (): Promise<IGastoProgramado[]> => {
+  const { data } = await api.get<IGastoProgramado[]>("/gastosProgramados");
+  return data;
+};
+
+export const criarGastoProgramado = async (
+  gastoProgramado: Omit<IGastoProgramado, "id">
+): Promise<IGastoProgramado> => {
+  const { data } = await api.post<IGastoProgramado>(
+    "/gastosProgramados",
+    gastoProgramado
+  );
+  return data;
+};
+
+export const atualizarGastoProgramado = async (
+  id: string,
+  gastoProgramado: Partial<IGastoProgramado>
+): Promise<IGastoProgramado> => {
+  const { data } = await api.patch(`/gastosProgramados/${id}`, gastoProgramado);
+  return data;
+};
+
+export const excluirGastoProgramado = async (id: string): Promise<void> => {
+  await api.delete(`/gastosProgramados/${id}`);
 };

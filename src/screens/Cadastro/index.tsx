@@ -1,85 +1,79 @@
 import { useState } from "react";
-import {
-  Section,
-  Container,
-  Title,
-  Description,
-  Illustration,
-  SectionWrapper,
-} from "./style.js";
-import ilustracao from "../../assets/images/ilustracao-cadastro.png";
-import { Form, useNavigate } from "react-router-dom";
-import Botao from "../../componentes/Botao/index.js";
-import CampoTexto from "../../componentes/CampoTexto/index.js";
-import Fieldset from "../../componentes/Fieldset/index.js";
-import Label from "../../componentes/Label/index.js";
-import { IUsuario } from "../../types/index.ts";
-import { useAppContext } from "../../context/AppContext.tsx";
+import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../../context/AppContext";
+import Botao from "../../componentes/Botao";
+import CampoTexto from "../../componentes/CampoTexto";
+import Form from "../../componentes/Form";
+import Label from "../../componentes/Label";
+import { Section, Container } from "./style";
+import ThemeToggle from "../../componentes/ThemeToggle";
+import Logo from "../../componentes/Logo";
+import styled from "styled-components";
 
-const Cadastro = () => {
+const LogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+`;
+
+const ThemeToggleContainer = styled.div`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+`;
+
+function Cadastro() {
+  const [nome, setNome] = useState("");
+  const [renda, setRenda] = useState("");
   const { criaUsuario } = useAppContext();
-  const [form, setForm] = useState<Omit<IUsuario, "id" | "orcamentoDiario">>({
-    nome: "",
-    renda: 0,
-  });
-
-  const aoDigitarNoCampoTexto = (campo: "nome" | "renda", valor: string) => {
-    setForm((prev) => ({ ...prev, [campo]: valor }));
-  };
-
   const navigate = useNavigate();
 
-  const aoSubmeterFormulario = async (evento: React.FormEvent) => {
+  const aoSubmeterForm = async (evento: React.FormEvent<HTMLFormElement>) => {
     evento.preventDefault();
-    criaUsuario(form);
+    await criaUsuario({
+      nome,
+      renda: parseFloat(renda),
+    });
     navigate("/home");
   };
 
   return (
     <Section>
-      <SectionWrapper>
-        <Container>
-          <Title>Configuração financeira</Title>
-          <Description>
-            Boas-vindas à plataforma que protege seu bolso! Antes de começar,
-            precisamos de algumas informações sobre sua rotina financeira. Vamos
-            lá?
-          </Description>
-          <Form>
-            <Fieldset>
-              <Label htmlFor="nome">Nome</Label>
-              <CampoTexto
-                type="text"
-                name="nome"
-                value={form.nome}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  aoDigitarNoCampoTexto("nome", e.target.value)
-                }
-              />
-            </Fieldset>
-            <Fieldset>
-              <Label htmlFor="renda">Renda mensal total</Label>
-              <CampoTexto
-                type="text"
-                name="renda"
-                value={form.renda}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  aoDigitarNoCampoTexto("renda", e.target.value)
-                }
-              />
-            </Fieldset>
-          </Form>
-          <Botao $variante="primario" onClick={aoSubmeterFormulario}>
-            Ir para o app
+      <ThemeToggleContainer>
+        <ThemeToggle />
+      </ThemeToggleContainer>
+      <Container>
+        <LogoContainer>
+          <Logo size="medium" showTitle={true} titleSize="large" />
+        </LogoContainer>
+        <Form onSubmit={aoSubmeterForm}>
+          <Label htmlFor="nome">Nome</Label>
+          <CampoTexto
+            id="nome"
+            type="text"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+            required
+          />
+
+          <Label htmlFor="renda">Renda mensal</Label>
+          <CampoTexto
+            id="renda"
+            type="number"
+            value={renda}
+            onChange={(e) => setRenda(e.target.value)}
+            required
+          />
+
+          <Botao $variante="primario" type="submit">
+            Começar
           </Botao>
-        </Container>
-        <Illustration
-          src={ilustracao}
-          alt="ilustração da tela de cadastro. Um avatar mexendo em alguns gráficos"
-        />
-      </SectionWrapper>
+        </Form>
+      </Container>
     </Section>
   );
-};
+}
 
 export default Cadastro;

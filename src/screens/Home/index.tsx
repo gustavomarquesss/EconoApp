@@ -5,11 +5,14 @@ import OrcamentoDiario from "../../componentes/OrcamentoDiario";
 import SaudacaoUsuario from "../../componentes/SaudacaoUsuario";
 import Transacoes from "../../componentes/Transacoes";
 import GastosMes from "../../componentes/GastosMes";
+import GastosProgramados from "../../componentes/GastosProgramados";
 import {
   Container,
   Movimentacoes,
   Orcamento,
   TransacoesWrapper,
+  GastosProgramadosWrapper,
+  MainContent,
 } from "./style";
 
 function Home() {
@@ -18,6 +21,10 @@ function Home() {
       <BarraLateral />
       <BarraPesquisa />
       <SaudacaoUsuario />
+      <GastosProgramadosWrapper>
+        <GastosProgramados />
+      </GastosProgramadosWrapper>
+      <MainContent>
       <Orcamento>
         <OrcamentoDiario />
         <GastosMes />
@@ -25,6 +32,7 @@ function Home() {
       <Movimentacoes>
         <BalancoFinanceiro />
       </Movimentacoes>
+      </MainContent>
       <TransacoesWrapper>
         <Transacoes />
       </TransacoesWrapper>
