@@ -1,0 +1,3 @@
+# Esta pasta armazena os arquivos Excel mensais
+# Os arquivos .xlsx são ignorados pelo git (dados pessoais)
+# Esta pasta é criada automaticamente pelo backend na primeira execução

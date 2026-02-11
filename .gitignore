@@ -29,8 +29,9 @@ dist-ssr
 .env.local
 .env.production
 
-# Excel data files (optional - uncomment if you don't want to track data)
-# server/data/months/*.xlsx
+# Excel data files - dados financeiros pessoais não devem ser versionados
+server/data/months/*.xlsx
+server/data/months/*.xls
 
 # Excel temporary files
 ~$*.xlsx
