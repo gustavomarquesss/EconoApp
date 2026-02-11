@@ -7,11 +7,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
 dist
 dist-ssr
 *.local
-db.json
 
 # Editor directories and files
 .vscode/*
@@ -23,3 +23,20 @@ db.json
 *.njsproj
 *.sln
 *.sw?
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Excel data files (optional - uncomment if you don't want to track data)
+# server/data/months/*.xlsx
+
+# Excel temporary files
+~$*.xlsx
+~$*.xls
+*.tmp
+
+# Build outputs
+server/dist
+build
